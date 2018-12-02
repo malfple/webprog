@@ -10,7 +10,8 @@ class LoginController extends Controller
 {
     public function showLogin(){
         if(Auth::check())return 'already logged in';
-        return view('loginForm');
+        $error = "";
+        return view('loginForm', compact('error'));
     }
 
     public function showRegister(){
@@ -18,20 +19,15 @@ class LoginController extends Controller
     }
 
     public function doLogin(Request $request){
-        $user = User::where('user_name', $request->user_name)->where('password', $request->password)->first();
+        $user = User::where('email', $request->email)->where('password', $request->password)->first();
         //return $user;
 
         if($user){
             Auth::login($user);
             return 'yey';
         }
-        return 'failed to login';
-    }
-
-    public function forceLoginAdmin(){
-        $user = User::where('user_name', 'admin')->first();
-        Auth::login($user);
-        return Auth::user();
+        $error = 'email and Password does not match';
+        return view('loginForm', compact('error'));
     }
 
     public function testLogin($email, $password){
@@ -50,16 +46,5 @@ class LoginController extends Controller
     public function doLogout(){
         Auth::logout();
         return redirect('/');
-    }
-
-    public function test(){
-        $user = new User;
-        $user->user_name = 'admin';
-        $user->password = 'admin';
-        $user->user_role = 'admin';
-        $user->user_gender = 'male';
-        $user->user_picture = '';
-        $user->save();
-        return 'test';
     }
 }
