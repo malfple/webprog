@@ -60,7 +60,20 @@ class LoginController extends Controller
             $error = "select your gender";
             return view('registerForm', compact('error'));
         }
-        return $request;
+        $ext = pathinfo($request->picture)['extension'];
+        if($ext != 'jpg' && $ext != 'jpeg' && $ext != 'png'){
+            $error = "file extension has to be .png/.jpg/.jpeg";
+            return view('registerForm', compact('error'));
+        }
+        $user = new User;
+        $user->user_name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->user_role = 'Member';
+        $user->user_gender = $request->gender;
+        $user->user_picture = $request->picture;
+        $user->save();
+        return 'done register';
     }
 
     public function doLogout(){
