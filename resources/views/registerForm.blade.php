@@ -20,7 +20,7 @@
         </select>
         <input type="file" id="picture" name="picture">
       <button type="submit">Create</button>
-      <p class="message">Already registered? <a href="loginForm.html">Sign In</a></p>
+      <p class="message">Already registered? <a href="/login">Sign In</a></p>
         </form>
     </div>
 </body>
