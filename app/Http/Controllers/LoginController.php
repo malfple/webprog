@@ -10,12 +10,13 @@ use App\User;
 class LoginController extends Controller
 {
     public function showLogin(){
-        if(Auth::check())return 'already logged in';
+        if(Auth::check())return redirect('/');
         $error = "";
         return view('loginForm', compact('error'));
     }
 
     public function showRegister(){
+        if(Auth::check())return redirect('/');
         $error = "";
         return view('registerForm', compact('error'));
     }
@@ -26,7 +27,7 @@ class LoginController extends Controller
 
         if($user){
             Auth::login($user);
-            return 'yey';
+            return redirect('/');
         }
         $error = 'email and Password does not match';
         return view('loginForm', compact('error'));
@@ -74,9 +75,11 @@ class LoginController extends Controller
         $user->password = $request->password;
         $user->user_role = 'Member';
         $user->user_gender = $request->gender;
-        $user->user_picture = $request->picture->store('public');
+        $pic_url = $request->picture->store('public');
+        $user->user_picture = substr($pic_url, 7);
         $user->save();
-        return $user;
+        $error = "register successful, please login";
+        return view('loginForm', compact('error'));
     }
 
     public function doLogout(){
