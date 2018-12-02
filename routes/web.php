@@ -37,3 +37,11 @@ Route::post('/doInsertPost', 'HomeController@insertPost');
 Route::get('/testLayout', function(){
     return view('layout');
 });
+
+Route::get('/insertPost', function(){
+    return view('insertPost');
+});
+
+Route::get('/transactionHistory', function(){
+    return view('transactionHistory');
+});

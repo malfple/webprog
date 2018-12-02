@@ -195,3 +195,23 @@ img{
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.transactionDetail p{
+    font-family: "Roboto", sans-serif;
+}
+
+table td img{
+    height: auto;
+    width: auto;
+    max-height: 100px;
+    max-width: 100px;
+}
+
+th, td{
+    padding: 10px;
+    text-align: center;
+}
+
+table, th, td{
+    border: 1px solid black;
+}
