@@ -16,11 +16,13 @@ class HomeController extends Controller
     }
 
     public function showMyPosts(){
+        if(!Auth::check())return redirect('/');
         $posts = Auth::user()->posts()->paginate(5);
         return view('myPost', ['posts' => $posts]);
     }
 
     public function showInsertPost(){
+        if(!Auth::check())return redirect('/');
         $categories = Category::all();
         $error = "";
         return view('insertPost', compact('error', 'categories'));
