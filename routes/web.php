@@ -20,4 +20,8 @@ Route::get('/logout', 'LoginController@doLogout');
 Route::post('/doLogin', 'LoginController@doLogin');
 Route::post('/doRegister', 'LoginController@doRegister');
 
-Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
+// Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
+
+Route::get('/testLayout', function(){
+    return view('layout');
+});
