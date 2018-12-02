@@ -2,7 +2,7 @@
 
 @section('title', 'Home')
 
-@section
+@section('content')
     <div class="imgrow">
                 <div class="imgcol">
                     <center>
