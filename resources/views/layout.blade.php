@@ -13,11 +13,15 @@
             </div>
             <div class="navbar-right">
                 <ul>
-                    <a href="home.html">Home</a>
-                    <a href="#">My Post</a>
-                    <a href="#">Post Detail</a>
-                    <a href="loginForm.html">Login</a>
-                    <a href="registerForm.html">Register</a>
+                    <a href="/">Home</a>
+                    @if(Auth::check())
+                        <a href="#">My Post</a>
+                        <a href="#">Post Detail</a>
+                        <a href="/logout">Logout</a>
+                    @else
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
+                    @endif
                 </ul>
             </div>
         </div>
