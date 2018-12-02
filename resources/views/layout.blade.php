@@ -15,7 +15,7 @@
                 <ul>
                     <a href="/">Home</a>
                         @if(Auth::check())
-                            <a href="#">My Post</a>
+                            <a href="/myPosts">My Post</a>
                             <a href="#">Followed Categories</a>
                             <a href="#">Transaction History</a>
                             <a href="#">Manage User</a>

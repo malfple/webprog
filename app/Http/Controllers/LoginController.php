@@ -62,6 +62,10 @@ class LoginController extends Controller
             $error = "select your gender";
             return view('registerForm', compact('error'));
         }
+        if(!$request->picture){
+            $error = "browse file";
+            return view('registerForm', compact('error'));
+        }
         $validator = Validator::make($request->all(), [
             'picture' => 'mimes:jpeg,png',
         ]);

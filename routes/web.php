@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'HomeController@showHome');
+Route::get('/myPosts', 'HomeController@showMyPosts');
+
 
 Route::get('/login', 'LoginController@showLogin');
 Route::get('/register', 'LoginController@showRegister');
@@ -26,12 +28,12 @@ Route::post('/cancelUpdateProfile', function(){
     return redirect('/');
 });
 
+
+Route::get('/addPost', 'HomeController@showInsertPost');
+Route::post('/doInsertPost', 'HomeController@insertPost');
+
 // Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
 
 Route::get('/testLayout', function(){
     return view('layout');
-});
-
-Route::get('/insertPost', function(){
-    return view('insertPost');
 });
