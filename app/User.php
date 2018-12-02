@@ -12,7 +12,7 @@ class User extends AuthUser
     	return $this->hasMany('App\Post');
     }
 
-    public function cart(){
-    	return $this->belongsTo('App\Cart');
-    }
+    // public function cart(){
+    // 	return $this->belongsTo('App\Cart');
+    // }
 }

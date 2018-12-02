@@ -31,3 +31,7 @@ Route::post('/cancelUpdateProfile', function(){
 Route::get('/testLayout', function(){
     return view('layout');
 });
+
+Route::get('/insertPost', function(){
+    return view('insertPost');
+});

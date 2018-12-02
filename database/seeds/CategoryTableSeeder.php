@@ -11,6 +11,11 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('categories')->insert([
+            'category_name' => 'ostrich art',
+        ]);
+        DB::table('categories')->insert([
+            'category_name' => 'random art',
+        ]);
     }
 }

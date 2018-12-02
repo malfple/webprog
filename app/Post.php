@@ -15,7 +15,7 @@ class Post extends Model
     	return $this->belongsTo('App\Category');
     }
 
-    public function carts(){
-    	return $this->belongsTo('App\Cart');
-    }
+    // public function carts(){
+    // 	return $this->belongsTo('App\Cart');
+    // }
 }

@@ -81,8 +81,7 @@ button{
 }
 
 .imgcol{
-    overflow: hidden;
-    flex: 33.33%;
+    display: inline-flex;
     padding: 1px;
 }
 
@@ -94,7 +93,7 @@ img{
 }
 
 .imgrow{
-    display: flex;
+    display: block;
 }
 
 .form {

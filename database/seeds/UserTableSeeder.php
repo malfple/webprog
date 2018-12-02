@@ -31,7 +31,7 @@ class UserTableSeeder extends Seeder
         	'password' =>'admin',
         	'user_role' => 'Admin',
         	'user_gender' => 'Male',
-        	'user_picture' => 'picture'
+        	'user_picture' => '2fn0m5.jpg'
         ]);
 	    
 	}
