@@ -10,7 +10,8 @@ class LoginController extends Controller
 {
     public function showLogin(){
         if(Auth::check())return 'already logged in';
-        return view('loginForm');
+        $error = "";
+        return view('loginForm', compact('error'));
     }
 
     public function showRegister(){
@@ -25,13 +26,8 @@ class LoginController extends Controller
             Auth::login($user);
             return 'yey';
         }
-        return 'failed to login';
-    }
-
-    public function forceLoginAdmin(){
-        $user = User::where('user_name', 'admin')->first();
-        Auth::login($user);
-        return Auth::user();
+        $error = 'Name and Password does not match';
+        return view('loginForm', compact('error'));
     }
 
     public function testLogin($email, $password){
