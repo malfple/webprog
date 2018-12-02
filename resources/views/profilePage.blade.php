@@ -14,6 +14,7 @@
                     <p>{{$user->email}}</p>
                 </div>
             </div>
+            <p style="color: red">{{$error}}</p>
             <form class="register-form" action="/updateProfile" method="POST">
                 {{csrf_field()}}
                 <input type="text" placeholder="UserID" value="{{$user->id}}" disabled="true">
@@ -26,8 +27,8 @@
                         <option>Female</option>
                     @endcan
                     @can('isNotMale', $user)
-                        <option selected>Male</option>
-                        <option>Female</option>
+                        <option>Male</option>
+                        <option selected>Female</option>
                     @endcan
                 </select>
             <button type="submit">Save Changes</button>
