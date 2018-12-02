@@ -7,23 +7,27 @@
         <div class="form">
             <div class="profile">
                 <div class="profilepic">
-                    <img src="img/Illya.jpg" alt="profile pic">
+                    <img src="storage/{{$user->user_picture}}" alt="profile pic">
                 </div>
                 <div class="profiledetail">
-                    <p>Profile Name</p>
-                    <p>profile@profile.com</p>
+                    <p>{{$user->user_name}}</p>
+                    <p>{{$user->email}}</p>
                 </div>
             </div>
-                
             <form class="register-form">
-                <input type="text" placeholder="UserID"/>
-                <input type="text" placeholder="Name"/>
-                <input type="text" placeholder="Email Address"/>
-                <input type="password" placeholder="Password"/>
-                <select name="gender">
-                    <option disabled="disabled" selected="selected">Gender</option>
-                    <option>Male</option>
-                    <option>Female</option>
+                <input type="text" placeholder="UserID" value="{{$user->id}}" disabled="true">
+                <input type="text" placeholder="Name" value="{{$user->user_name}}">
+                <input type="text" placeholder="Email Address" value="{{$user->email}}">
+                <input type="password" placeholder="Change Password">
+                <select name="gender" selected="Male">
+                    @can('isMale', $user)
+                        <option selected>Male</option>
+                        <option>Female</option>
+                    @endcan
+                    @can('isNotMale', $user)
+                        <option selected>Male</option>
+                        <option>Female</option>
+                    @endcan
                 </select>
             <button>Save Changes</button>
             <button>Discard Changes</button>
