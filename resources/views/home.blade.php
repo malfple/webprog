@@ -12,8 +12,12 @@
             </div>
             <div class="navbar-right">
                 <ul>
+                    
+                    <button formaction="#">Home</button>
+                    <button formaction="#">My Post</button>
+                    <button formaction="#">Post Detail</button>
                     <button formaction="loginForm.html">Login</button>
-                    <button formaction="registerForm">Register</button>
+                    <button formaction="registerForm">Register</button
                 </ul>
             </div>
         </div>

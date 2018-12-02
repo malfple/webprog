@@ -1,8 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+
+
 .navbar{
     overflow: hidden;
-	
+	background-color: #6db8f9;
 	position: relative;
 }
 
@@ -11,18 +13,25 @@
     width:50%;   
 }
 
+.navbar-right ul{
+    float: right;
+}
+
 .navbar-right button{
     font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #2fd6d6;
-  
+  background-color: #6db8f9;
   border: 0;
   padding: 15px;
   color: white;
   font-size: 14px;
   transition: all 0.3 ease;
   cursor: pointer;
+}
+
+.navbar-right button:hover{
+    background-color: #369df7;
 }
 
 .navbar-left{
@@ -47,7 +56,7 @@
 
 .navbar:hover{
     display: block;
-	background-color: aquamarine;
+	background-color: #6db8f9;
 	animation-delay: 4s;
 }
 
@@ -65,4 +74,8 @@ img{
 
 .imgrow{
     display: flex;
+}
+
+.content{
+    background-color: dimgray;
 }
