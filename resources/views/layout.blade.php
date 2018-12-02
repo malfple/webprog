@@ -14,15 +14,19 @@
             <div class="navbar-right">
                 <ul>
                     <a href="/">Home</a>
-                    @if(Auth::check())
-                        <a href="#">My Post</a>
-                        <a href="#">Post Detail</a>
-                        <a class="username"href="/profile">{{Auth::user()->user_name}}</b>
-                        <a href="/logout">Logout</a>
-                    @else
-                        <a href="/login">Login</a>
-                        <a href="/register">Register</a>
-                    @endif
+                        @if(Auth::check())
+                            <a href="#">My Post</a>
+                            <a href="#">Followed Categories</a>
+                            <a href="#">Transaction History</a>
+                            <a href="#">Manage User</a>
+                            <a href="#">Manage Category</a>
+                            <a href="#">View Transactions</a>
+                            <a class="username"href="/profile">{{Auth::user()->user_name}}</a>
+                            <a href="/logout">Logout</a>
+                         @else
+                            <a href="/login">Login</a>
+                            <a href="/register">Register</a>
+                        @endif
                 </ul>
             </div>
         </div>
