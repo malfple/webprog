@@ -35,3 +35,7 @@ Route::get('/testLayout', function(){
 Route::get('/insertPost', function(){
     return view('insertPost');
 });
+
+Route::get('/transactionHistory', function(){
+    return view('transactionHistory');
+});
