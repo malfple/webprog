@@ -16,6 +16,23 @@
 	text-decoration: none;
 }
 
+.add{
+    padding-top: 30px;
+}
+
+.add a{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #6db8f9;
+    border: 0;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
 .navbar-right ul .username{
 	float:left;
     background-color: red;
@@ -37,15 +54,15 @@
 
 button{
     font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background-color: #6db8f9;
-  border: 0;
-  padding: 15px;
-  color: white;
-  font-size: 14px;
-  transition: all 0.3 ease;
-  cursor: pointer;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #6db8f9;
+    border: 0;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
 }
 
 .navbar-right ul a:hover{
@@ -95,6 +112,7 @@ img{
 
 .imgrow{
     display: flex;
+    margin-top: 20px;
 }
 
 .form {
