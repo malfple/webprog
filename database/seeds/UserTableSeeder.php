@@ -15,20 +15,24 @@ class UserTableSeeder extends Seeder
     {
         //
         $faker = Faker::create();
-        foreach (range(1,10) as $index) {
-            DB::table('users')->insert([
-                'user_name' => $faker->name,
-                'user_email' => $faker->email,
-                'user_password' => str_random(3),
-                'user_role' => mt_rand(1,2),
-                'user_gender' => mt_rand(1,2),
-                'user_picture' => str_random(10)
-            ]);
-        // DB::table('users')->insert([
-        // 	'user_name' => str_random(10),
-        // 	'user_email' => str_random(10).'@gmail.com',
-        // 	'user_password' =>bycript($data['password']),
-        // ]);
-	    }
+        // foreach (range(1,10) as $index) {
+        //     DB::table('users')->insert([
+        //         'user_name' => $faker->name,
+        //         'email' => $faker->email,
+        //         'password' => str_random(3),
+        //         'user_role' => mt_rand(1,2),
+        //         'user_gender' => mt_rand(1,2),
+        //         'user_picture' => str_random(10)
+        //     ]);
+        // }
+        DB::table('users')->insert([
+        	'user_name' => 'admin',
+        	'email' => 'admin.@gmail.com',
+        	'password' =>'admin',
+        	'user_role' => 1,
+        	'user_gender' => 'Male',
+        	'user_picture' => 'picture'
+        ]);
+	    
 	}
 }
