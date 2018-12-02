@@ -16,7 +16,7 @@
 	text-decoration: none;
 }
 
-.navbar-right ul b{
+.navbar-right ul .username{
 	float:left;
     background-color: red;
 	padding:15px;
