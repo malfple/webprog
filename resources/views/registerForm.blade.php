@@ -1,13 +1,13 @@
 <html>
 <head>
-<link rel = "stylesheet" type="text/css" href="style.css">
+<link rel = "stylesheet" type="text/css" href="css/style.css">
 </head>
 <body class="register">
 <div class="register-page">
     <div class="form">
         <h3>REGISTER</h3>
         <p style="color: red">{{$error}}</p>
-      <form class="register-form" action="/doRegister" method="POST">
+      <form class="register-form" action="/doRegister" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <input type="text" placeholder="Name" name="name">
         <input type="text" placeholder="Email Address" name="email">
@@ -18,7 +18,7 @@
           <option>Male</option>
           <option>Female</option>
         </select>
-        <input type="file" name="picture">
+        <input type="file" id="picture" name="picture">
       <button type="submit">Create</button>
       <p class="message">Already registered? <a href="loginForm.html">Sign In</a></p>
         </form>

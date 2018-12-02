@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -60,8 +61,10 @@ class LoginController extends Controller
             $error = "select your gender";
             return view('registerForm', compact('error'));
         }
-        $ext = pathinfo($request->picture)['extension'];
-        if($ext != 'jpg' && $ext != 'jpeg' && $ext != 'png'){
+        $validator = Validator::make($request->all(), [
+            'picture' => 'mimes:jpeg,png',
+        ]);
+        if($validator->fails()){
             $error = "file extension has to be .png/.jpg/.jpeg";
             return view('registerForm', compact('error'));
         }
@@ -71,9 +74,9 @@ class LoginController extends Controller
         $user->password = $request->password;
         $user->user_role = 'Member';
         $user->user_gender = $request->gender;
-        $user->user_picture = $request->picture;
+        $user->user_picture = $request->picture->store('public');
         $user->save();
-        return 'done register';
+        return $user;
     }
 
     public function doLogout(){

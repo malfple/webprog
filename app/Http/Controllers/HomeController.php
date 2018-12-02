@@ -13,4 +13,5 @@ class HomeController extends Controller
     public function pagination(){
    		$posts = DB::table('posts') ->paginate(10);
     	return view('home.blade.php', ['posts' => $posts]);
+    }
 }
