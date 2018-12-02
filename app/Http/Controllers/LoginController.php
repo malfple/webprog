@@ -15,7 +15,8 @@ class LoginController extends Controller
     }
 
     public function showRegister(){
-        return view('registerForm');
+        $error = "";
+        return view('registerForm', compact('error'));
     }
 
     public function doLogin(Request $request){
@@ -30,17 +31,36 @@ class LoginController extends Controller
         return view('loginForm', compact('error'));
     }
 
-    public function testLogin($email, $password){
-        $credentials = [
-            'user_name' => $email,
-            'password' => $password,
-        ];
-
-        if (Auth::attempt($credentials)) {
-            // Authentication passed...
-            return 'yey';
+    public function doRegister(Request $request){
+        if(strlen($request->name) < 5){
+            $error = "name must have at least 5 characters";
+            return view('registerForm', compact('error'));
         }
-        return redirect('/');
+        if(!filter_var($request->email, FILTER_VALIDATE_EMAIL)){
+            $error = "invalid email";
+            return view('registerForm', compact('error'));
+        }
+        if(User::where('email', $request->email)->first()){
+            $error = "email already exist, pick another one";
+            return view('registerForm', compact('error'));
+        }
+        if(strlen($request->password) < 8){
+            $error = "password must be at least 8 characters";
+            return view('registerForm', compact('error'));
+        }
+        if(!ctype_alnum($request->password)){
+            $error = "password must be alphanumeric";
+            return view('registerForm', compact('error'));
+        }
+        if($request->password != $request->confirmPassword){
+            $error = "confirm password must be same as password";
+            return view('registerForm', compact('error'));
+        }
+        if(!$request->gender){
+            $error = "select your gender";
+            return view('registerForm', compact('error'));
+        }
+        return $request;
     }
 
     public function doLogout(){

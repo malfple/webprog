@@ -29,7 +29,7 @@ class UserTableSeeder extends Seeder
         	'user_name' => 'admin',
         	'email' => 'admin@gmail.com',
         	'password' =>'admin',
-        	'user_role' => 1,
+        	'user_role' => 'Admin',
         	'user_gender' => 'Male',
         	'user_picture' => 'picture'
         ]);

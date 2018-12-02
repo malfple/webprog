@@ -11,14 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return 'home';
-});
+Route::get('/', 'HomeController@showHome');
 
 Route::get('/login', 'LoginController@showLogin');
 Route::get('/register', 'LoginController@showRegister');
 Route::get('/logout', 'LoginController@doLogout');
 
 Route::post('/doLogin', 'LoginController@doLogin');
+Route::post('/doRegister', 'LoginController@doRegister');
 
 Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');

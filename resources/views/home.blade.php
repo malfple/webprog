@@ -12,12 +12,11 @@
             </div>
             <div class="navbar-right">
                 <ul>
-                    
-                    <button formaction="#">Home</button>
-                    <button formaction="#">My Post</button>
-                    <button formaction="#">Post Detail</button>
-                    <button formaction="loginForm.html">Login</button>
-                    <button formaction="registerForm">Register</button
+                    <a href = "home.html">Home</a>
+                    <a href = "#">My Post</a>
+                    <a href = "#">Post Detail</a>
+                    <a href = "loginForm.html">Login</a>
+                    <a href = "registerForm.html">Register</a>
                 </ul>
             </div>
         </div>
