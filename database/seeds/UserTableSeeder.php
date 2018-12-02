@@ -19,9 +19,9 @@ class UserTableSeeder extends Seeder
             DB::table('users')->insert([
                 'user_name' => $faker->name,
                 'user_email' => $faker->email,
-                'user_password' => str_random(5),
-                'user_role' => str_random(1),
-                'user_gender' => str_random(1),
+                'user_password' => str_random(3),
+                'user_role' => mt_rand(1,2),
+                'user_gender' => mt_rand(1,2),
                 'user_picture' => str_random(10)
             ]);
         // DB::table('users')->insert([
