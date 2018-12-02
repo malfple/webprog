@@ -1,21 +1,12 @@
 @extends('layout')
 
-@section('title', 'Profile Page')
+@section('title', 'Insert Post')
 
 @section('content')
     <div class="register-page">
-        <div class="form">
-            <div class="profile">
-                <div class="profilepic">
-                    <img src="img/Illya.jpg" alt="profile pic">
-                </div>
-                <div class="profiledetail">
-                    <p>Profile Name</p>
-                    <p>profile@profile.com</p>
-                </div>
-            </div>
-                
-            <form class="register-form">
+            <div class="form">
+                <h2>Insert Post</h2>
+                <form class="register-form">
                 <input type="text" placeholder="UserID"/>
                 <input type="text" placeholder="Name"/>
                 <input type="text" placeholder="Email Address"/>
