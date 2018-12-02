@@ -4,23 +4,22 @@
 
 @section('content')
     <div class="add">
-        <a href="#">+ Add</a>
+        <a href="/addPost">+ Add</a>
     </div>
-    <div class="imgrow">
+
+<div class="imgrow">
+    @foreach($posts as $post)
         <div class="imgcol">
-            <center>
-                <img src="img/kanna1.jpg" alt="kanna" style="50%">
-            </center>
+            <a href="#">
+                <center>
+                    <img src="/storage/{{$post->post_picture}}"><br>
+                    {{$post->post_name}}<br>
+                    {{$post->post_caption}}<br>
+                    {{$post->post_price}}
+                </center>
+            </a>
         </div>
-        <div class="imgcol">
-            <center>
-                <img src="img/victorique1.jpg" alt="victorique" style="50%">
-            </center>
-        </div>
-        <div class="imgcol">
-            <center>
-                <img src="img/Illya.jpg" alt="Illya" style="50%">
-            </center>
-        </div>
-    </div>
+    @endforeach
+    {{$posts->links()}}
+</div>
 @endsection
