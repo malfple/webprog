@@ -19,14 +19,14 @@ class LoginController extends Controller
     }
 
     public function doLogin(Request $request){
-        $user = User::where('user_name', $request->user_name)->where('password', $request->password)->first();
+        $user = User::where('email', $request->email)->where('password', $request->password)->first();
         //return $user;
 
         if($user){
             Auth::login($user);
             return 'yey';
         }
-        $error = 'Name and Password does not match';
+        $error = 'email and Password does not match';
         return view('loginForm', compact('error'));
     }
 
@@ -46,16 +46,5 @@ class LoginController extends Controller
     public function doLogout(){
         Auth::logout();
         return redirect('/');
-    }
-
-    public function test(){
-        $user = new User;
-        $user->user_name = 'admin';
-        $user->password = 'admin';
-        $user->user_role = 'admin';
-        $user->user_gender = 'male';
-        $user->user_picture = '';
-        $user->save();
-        return 'test';
     }
 }
