@@ -21,6 +21,4 @@ Route::get('/logout', 'LoginController@doLogout');
 
 Route::post('/doLogin', 'LoginController@doLogin');
 
-Route::get('/test', 'LoginController@test');
-
 Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
