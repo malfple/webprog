@@ -14,12 +14,13 @@
                     <p>{{$user->email}}</p>
                 </div>
             </div>
-            <form class="register-form">
+            <form class="register-form" action="/updateProfile" method="POST">
+                {{csrf_field()}}
                 <input type="text" placeholder="UserID" value="{{$user->id}}" disabled="true">
-                <input type="text" placeholder="Name" value="{{$user->user_name}}">
-                <input type="text" placeholder="Email Address" value="{{$user->email}}">
-                <input type="password" placeholder="Change Password">
-                <select name="gender" selected="Male">
+                <input type="text" placeholder="Name" name="name" value="{{$user->user_name}}">
+                <input type="text" placeholder="Email Address" name="email" value="{{$user->email}}">
+                <input type="password" placeholder="Change Password" name="password" >
+                <select name="gender" name="gender">
                     @can('isMale', $user)
                         <option selected>Male</option>
                         <option>Female</option>
@@ -29,8 +30,8 @@
                         <option>Female</option>
                     @endcan
                 </select>
-            <button>Save Changes</button>
-            <button>Discard Changes</button>
+            <button type="submit">Save Changes</button>
+            <button formaction="/cancelUpdateProfile">Discard Changes</button>
             </form>
         </div>
 @endsection

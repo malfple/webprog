@@ -21,6 +21,10 @@ Route::post('/doLogin', 'LoginController@doLogin');
 Route::post('/doRegister', 'LoginController@doRegister');
 
 Route::get('/profile', 'ProfileController@showProfile');
+Route::post('/updateProfile', 'ProfileController@updateProfile');
+Route::post('/cancelUpdateProfile', function(){
+    return redirect('/');
+});
 
 // Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
 
