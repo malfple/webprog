@@ -39,3 +39,7 @@ Route::get('/insertPost', function(){
 Route::get('/transactionHistory', function(){
     return view('transactionHistory');
 });
+
+Route::get('/postDetail', function(){
+    return view('postDetail');
+});
