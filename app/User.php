@@ -3,8 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as AuthUser;
 
-class User extends Model
+class User extends AuthUser
 {
     //
     public function posts(){

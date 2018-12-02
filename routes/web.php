@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'home';
 });
+
+Route::get('/login', 'LoginController@showLogin');
+Route::get('/register', 'LoginController@showRegister');
+Route::get('/logout', 'LoginController@doLogout');
+
+Route::post('/doLogin', 'LoginController@doLogin');
+
+Route::get('/test', 'LoginController@test');
+
+Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
