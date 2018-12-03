@@ -20,7 +20,7 @@ page/feature | [frontend] | [backend]
 - Cart [v][]
 - Transaction History [v][]
 
-- Manage User [][]
+- Manage User [V][]
 - Edit User [][]
 - Manage Categories [][]
 - Update Category [][]
