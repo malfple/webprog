@@ -6,7 +6,7 @@
     <div class="form2">
         <p style="color: red">{{$error}}</p>
         <div class="top">
-        <h2>{{$owner->user_name}}</h2>
+        <h2>Author: {{$owner->user_name}}</h2>
             <div class="btns">
                 @if(Auth::check())
                 <ul>
@@ -27,7 +27,7 @@
         </div>
         <div class="img">
             <img src="/storage/{{$post->post_picture}}" alt=Anime style=100%>
-            <p>{{$post->post_name}}</p>
+            <p>Title: {{$post->post_name}}</p>
             <p>Category: {{$category->category_name}}</p>
             <p>Caption: {{$post->post_caption}}</p>
             <p>Price: {{$post->post_price}}</p>
