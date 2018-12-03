@@ -97,6 +97,9 @@ class ProfileController extends Controller
     }
 
     public function deleteUser(Request $request){
+        $user = User::where('id', $request->id)->first();
+        // $user->delete();
+        // uncomment the above line to enable delete
         return redirect('/manageUser');
     }
 }
