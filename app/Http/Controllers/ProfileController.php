@@ -65,6 +65,19 @@ class ProfileController extends Controller
         if(!Auth::check())return redirect('/');
         if(Auth::user()->user_role != 'Admin')return redirect('/');
         $user = User::where('id', $id)->first();
-        return view('editUser', compact('user'));
+        $error = "";
+        return view('editUser', compact('user', 'error'));
+    }
+
+    public function cancelUpdateUser(Request $request){
+        return redirect('/manageUser');
+    }
+
+    public function updateUser(Request $request){
+        return $request;
+    }
+
+    public function deleteUser(Request $request){
+        return $request;
     }
 }

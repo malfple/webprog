@@ -28,6 +28,10 @@ Route::post('/cancelUpdateProfile', 'ProfileController@cancelUpdate');
 Route::get('/manageUser', 'ProfileController@showManageUser');
 Route::get('/updateUser/{id}', 'ProfileController@showUpdateUser');
 
+Route::post('/cancelUpdateUser', 'ProfileController@cancelUpdateUser');
+Route::post('/doUpdateUser', 'ProfileController@updateUser');
+Route::post('/deleteUser', 'ProfileController@deleteUser');
+
 // display posts, comments, etc + their features
 Route::get('/', 'HomeController@showHome');
 Route::get('/myPosts', 'HomeController@showMyPosts');

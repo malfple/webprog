@@ -6,6 +6,8 @@
  <h2 id="insertTitle">Update User</h2><br>
     <div class="edituser">
         <form method="POST">
+            {{csrf_field()}}
+            <p style="color: red">{{$error}}</p>
             <table width=100%>
                 <tr>
                     <td>
