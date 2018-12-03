@@ -43,10 +43,6 @@ Route::get('/testLayout', function(){
     return view('layout');
 });
 
-Route::get('/testPostDetail', function(){
-    return view('postDetail');
-});
-
 Route::get('/testTransactionHistory', function(){
     return view('transactionHistory');
 });
