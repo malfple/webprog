@@ -72,3 +72,11 @@ Route::get('/testManageUser', function(){
 Route::get('/testManageCat', function(){
     return view('manageCategories');
 });
+
+Route::get('/testInsert', function(){
+    return view('insertCategory');
+});
+
+Route::get('/testUpdate', function(){
+    return view('updateCategory');
+});

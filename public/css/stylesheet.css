@@ -341,3 +341,23 @@ h2{
 .managecategory table{
     border: 1px solid black;
 }
+
+.insertcategory{
+    text-align: center;
+    margin-top: 10%
+}
+
+.insertcategory .insertname{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    border: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#insertTitle{
+    width: 100%;
+    text-align: center;
+}
