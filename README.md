@@ -17,7 +17,7 @@ page/feature | [frontend] | [backend]
 - Followed category [][]
 - Post Detail [v][v]
 
-- Cart [v][]
+- Cart [v][v]
 - Transaction History [v][]
 
 - Manage User [V][]
