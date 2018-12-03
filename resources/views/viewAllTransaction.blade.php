@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Transaction History')
+@section('title', 'View All Transaction History')
 
 @section('content')
     <div class="transactionDetail">
