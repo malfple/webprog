@@ -31,9 +31,11 @@ Route::post('/cancelUpdateProfile', function(){
 Route::get('/addPost', 'HomeController@showInsertPost');
 Route::post('/doInsertPost', 'HomeController@insertPost');
 
-Route::get('/postDetail/{id}', 'HomeController@showPostDetail');
-
 Route::get('/followedPosts', 'HomeController@showFollowedPosts');
+
+Route::get('/postDetail/{id}', 'HomeController@showPostDetail');
+Route::post('/doAddComment', 'HomeController@addComment');
+
 
 // Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
 

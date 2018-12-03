@@ -7,10 +7,21 @@
         <div class="top">
         <h2>{{$owner->user_name}}</h2>
             <div class="btns">
+                @if(Auth::check())
                 <ul>
-                    <a href="#">Add to Cart</a>
-                    <a href="#">Delete Post</a>
+                    @if(!$isOwner)
+                        <a href="#">Add to Cart</a>
+                    @endif
+                    @can('isAdmin')
+                        <a href="#">Delete Post</a>
+                    @endcan
+                    @can('isNotAdmin')
+                        @if($isOwner)
+                            <a href="#">Delete Post</a>
+                        @endif
+                    @endcan
                 </ul>
+                @endif
             </div>
         </div>
         <div class="img">
@@ -22,23 +33,30 @@
         </div>
         <div class="comments">
             <table>
+                @foreach($comments as $comment)
                 <tr>
                     <td>
-                        <a class="username">Loli Heaven: </a>
+                        <a class="username">{{$comment->user->user_name}}: </a>
                     </td>
                     <td>
-                        <p>This post is sick bro</p>
+                        <p>{{$comment->content}}</p>
                     </td>
                 </tr>
+                @endforeach
             </table>
         </div>
+        @if(Auth::check())
         <div class="inputComment">
             <p>Add Your Comment:</p>
-            <form id="commentForm">
+            <p style="color: red">{{$error}}</p>
+            <form id="commentForm" action="/doAddComment" method="POST">
+                {{csrf_field()}}
                 <textarea name="comment" form="commentForm" placeholder="Input your commet here" rows="4" cols="50"></textarea>
                 <p></p>
+                <input type="text" hidden=true name="post_id" value="{{$post->id}}">
                 <input type="submit">
             </form>
         </div>
+        @endif
     </div>
 @endsection

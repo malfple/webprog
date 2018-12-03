@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Category;
+use App\Comment;
 use Validator;
 
 class HomeController extends Controller
@@ -70,7 +71,7 @@ class HomeController extends Controller
         return view('insertPost', compact('error', 'categories'));
     }
 
-    public function showFollowedPosts(){
+    public function showFollowedPosts(){    
         if(!Auth::check())return redirect('/');
         $posts = Post::whereHas('category', function($query){
             $query->whereHas('users', function($query2){
@@ -86,6 +87,34 @@ class HomeController extends Controller
         $post = Post::where('id', $id)->first();
         $owner = $post->user;
         $category = $post->category;
-        return view('postDetail', compact('post', 'owner', 'category'));
+        $comments = $post->comments;
+        $error = "";
+        if(Auth::check()){
+            $isOwner = Auth::user()->id == $owner->id;
+            //return $comments;
+            return view('postDetail', compact('post', 'owner', 'category', 'comments', 'error', 'isOwner'));
+        }else{
+            return view('postDetail', compact('post', 'owner', 'category', 'comments', 'error'));
+        }
+    }
+
+    public function addComment(Request $request){
+        if(strlen($request->comment) < 1){
+            $id = $request->post_id;
+            $post = Post::where('id', $id)->first();
+            $owner = $post->user;
+            $category = $post->category;
+            $comments = $post->comments;
+            $error = "comment must be filled";
+            $isOwner = Auth::user()->id == $owner->id;
+            return view('postDetail', compact('post', 'owner', 'category', 'comments', 'error', 'isOwner'));
+        }
+
+        $comment = new Comment;
+        $comment->content = $request->comment;
+        $comment->user_id = Auth::user()->id;
+        $comment->post_id = $request->post_id;
+        $comment->save();
+        return redirect('/postDetail/'.$request->post_id);
     }
 }
