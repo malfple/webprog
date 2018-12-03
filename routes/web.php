@@ -41,6 +41,8 @@ Route::get('/deletePost/{id}', 'HomeController@deletePost');
 Route::get('/manageFollowedCategories', 'CategoryController@showFollowedCategories');
 Route::post('/updateFollowedCategories', 'CategoryController@updateFollowedCategories');
 
+Route::get('/manageCategories', 'CategoryController@showManageCategories');
+
 // transactions
 Route::get('/cart', 'TransactionController@showCart');
 

@@ -32,4 +32,10 @@ class CategoryController extends Controller
         }
         return redirect('/manageFollowedCategories');
     }
+
+    public function showManageCategories(){
+        if(!Auth::check())return redirect('/');
+        if(Auth::user()->user_role != 'Admin')return redirect('/');
+        return view('manageCategories');
+    }
 }
