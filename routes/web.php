@@ -56,3 +56,11 @@ Route::get('/testProfilePage', function(){
 Route::get('/testCart', function(){
     return view('cart');
 });
+
+Route::get('/testDetail', function(){
+    return view('postDetail');
+});
+
+Route::get('/testFollowCat', function(){
+    return view('followedCategories');
+});
