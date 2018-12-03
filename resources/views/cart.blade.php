@@ -19,7 +19,7 @@
         </tr>
         @endforeach
     </table>
-    <p>Total Price: Rp. </p>
+    <p>Total Price: {{$total_price}}</p>
     <form action="/checkout" method="POST">
         {{csrf_field()}}
         <button type="submit">Checkout</button>

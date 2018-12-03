@@ -6,7 +6,7 @@
     @foreach($transactions as $transaction)
     <div class="transactionDetail">
         <p>Transaction ID: {{$transaction->id}}</p>
-        <p>Total Price: </p>
+        <p>Total Price: {{$transaction->total_price}}</p>
         <p>Transaction Date: {{$transaction->transaction_date}}</p>
     </div>
     <table width=100%>

@@ -18,7 +18,9 @@ class TransactionController extends Controller
             Auth::user()->cart()->save($cart);
         }
         $posts = $cart->posts;
-        return view('cart', compact('posts'));
+        $total_price = 0;
+        foreach($posts as $post)$total_price += $post->post_price;
+        return view('cart', compact('posts', 'total_price'));
     }
 
     public function addToCart($id){
@@ -65,12 +67,15 @@ class TransactionController extends Controller
 
         $transaction = new Transaction;
         $transaction->transaction_date = now();
+        $transaction->total_price = 0;
         Auth::user()->transactions()->save($transaction);
 
         foreach($posts as $post){
             $cart->posts()->detach($post->id);
             $transaction->posts()->attach($post->id);
+            $transaction->total_price += $post->post_price;
         }
+        $transaction->save();
         return redirect('/cart');
     }
 
