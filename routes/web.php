@@ -45,8 +45,6 @@ Route::get('/removeFromCart/{id}', 'TransactionController@removeFromCart');
 
 Route::get('/transactionHistory', 'TransactionController@showTransactionHistory');
 
-// Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
-
 // -----  test routes  -----
 
 Route::get('/testLayout', function(){
