@@ -3,11 +3,11 @@
 @section('title', 'Transaction History')
 
 @section('content')
+    @foreach($transactions as $transaction)
     <div class="transactionDetail">
-        <p>Transaction ID: </p>
-        <p>Buyer: </p>
+        <p>Transaction ID: {{$transaction->id}}</p>
         <p>Total Price: </p>
-        <p>Transaction Date: </p>
+        <p>Transaction Date: {{$transaction->transaction_date}}</p>
     </div>
     <table width=100%>
         <tr>
@@ -15,10 +15,13 @@
             <th>Name</th>
             <th>Price</th>
         </tr>
+        @foreach($transaction->posts as $post)
         <tr>
-            <td><img src="ahegao.jpg" alt="Anime" style="50%"></td>
-            <td>Favorite Genre</td>
-            <td>10000</td>
+            <td><a href="/postDetail/{{$post->id}}"><img src="/storage/{{$post->post_picture}}" alt="Anime" style="50%"></a></td>
+            <td>{{$post->post_name}}</td>
+            <td>{{$post->post_price}}</td>
         </tr>
+        @endforeach
     </table>
+    @endforeach
 @endsection
