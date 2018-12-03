@@ -56,4 +56,9 @@ class TransactionController extends Controller
         $cart->posts()->detach($id);
         return redirect('/cart');
     }
+
+    public function showTransactionHistory(){
+        if(!Auth::check())return redirect('/');
+        return view('transactionHistory');
+    }
 }

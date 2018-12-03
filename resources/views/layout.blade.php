@@ -18,11 +18,11 @@
                             <a href="/myPosts">My Post</a>
                             <a href="/followedPosts">Followed Posts</a>
                             <a href="#">Change Followed Categories</a>
-                            <a href="#">Transaction History</a>
+                            <a href="/transactionHistory">Transaction History</a>
                             @can('isAdmin')
                                 <a href="#">Manage User</a>
                                 <a href="#">Manage Category</a>
-                                <a href="#">View Transactions</a>
+                                <a href="#">View All Transactions</a>
                             @endcan
                             <a href="/cart">Cart</a>
                             <a class="username"href="/profile">{{Auth::user()->user_name}}</a>
