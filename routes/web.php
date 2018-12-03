@@ -24,9 +24,7 @@ Route::post('/doRegister', 'LoginController@doRegister');
 
 Route::get('/profile', 'ProfileController@showProfile');
 Route::post('/updateProfile', 'ProfileController@updateProfile');
-Route::post('/cancelUpdateProfile', function(){
-    return redirect('/');
-});
+Route::post('/cancelUpdateProfile', 'ProfileController@cancelUpdate');
 
 Route::get('/addPost', 'HomeController@showInsertPost');
 Route::post('/doInsertPost', 'HomeController@insertPost');
