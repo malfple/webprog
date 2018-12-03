@@ -61,6 +61,8 @@ Route::post('/checkout', 'TransactionController@checkout');
 
 Route::get('/transactionHistory', 'TransactionController@showTransactionHistory');
 
+Route::get('/allTransactions', 'TransactionController@showAllTransactions');
+
 // -----  test routes  -----
 
 Route::get('/testLayout', function(){

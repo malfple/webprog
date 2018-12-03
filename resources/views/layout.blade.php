@@ -22,7 +22,7 @@
                             @can('isAdmin')
                                 <a href="#">Manage User</a>
                                 <a href="/manageCategories">Manage Categories</a>
-                                <a href="#">View All Transactions</a>
+                                <a href="/allTransactions">View All Transactions</a>
                             @endcan
                             <a href="/cart">Cart</a>
                             <a class="username"href="/profile">{{Auth::user()->user_name}}</a>

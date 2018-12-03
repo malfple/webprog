@@ -84,4 +84,10 @@ class TransactionController extends Controller
         $transactions = Auth::user()->transactions;
         return view('transactionHistory', compact('transactions'));
     }
+
+    public function showAllTransactions(){
+        if(!Auth::check())return redirect('/');
+        if(Auth::user()->user_role != 'Admin')return redirect('/');
+        return view('viewAllTransaction');
+    }
 }
