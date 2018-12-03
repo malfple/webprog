@@ -48,3 +48,7 @@ Route::get('/testPostDetail', function(){
 Route::get('/testTransactionHistory', function(){
     return view('transactionHistory');
 });
+
+Route::get('/testProfilePage', function(){
+    return view('profilePage');
+});
