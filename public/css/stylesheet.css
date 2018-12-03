@@ -277,3 +277,10 @@ h2{
     border=0px;
     text-align: left;
 }
+
+.categories table, .categories tr, .categories td{
+    border:0px;
+    text-align: left;
+}
+
+
