@@ -24,6 +24,7 @@
                     </td>
                 </tr>
             </table>
+            <button>Add</button>
         </form>
     </div>
 @endsection
