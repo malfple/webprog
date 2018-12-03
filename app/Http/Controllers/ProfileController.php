@@ -49,4 +49,8 @@ class ProfileController extends Controller
         $error = "update successful";
         return view('profilePage', compact('error','user'));
     }
+
+    public function cancelUpdate(Request $request){
+        return redirect('/');
+    }
 }
