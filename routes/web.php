@@ -43,6 +43,14 @@ Route::post('/updateFollowedCategories', 'CategoryController@updateFollowedCateg
 
 Route::get('/manageCategories', 'CategoryController@showManageCategories');
 
+Route::get('/updateCategory/{id}', 'CategoryController@showUpdateCategory');
+Route::post('/doUpdateCategory', 'CategoryController@updateCategory');
+
+Route::get('/deleteCategory/{id}', 'CategoryController@deleteCategory');
+
+Route::get('/addCategory', 'CategoryController@showAddCategory');
+Route::post('/doAddCategory', 'CategoryController@addCategory');
+
 // transactions
 Route::get('/cart', 'TransactionController@showCart');
 
