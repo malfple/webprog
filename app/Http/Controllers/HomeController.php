@@ -70,6 +70,10 @@ class HomeController extends Controller
         return view('insertPost', compact('error', 'categories'));
     }
 
+    public function showFollowedPosts(){
+        
+    }
+
     public function showPostDetail($id){
         return $id;
     }
