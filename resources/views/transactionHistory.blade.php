@@ -6,6 +6,7 @@
     @foreach($transactions as $transaction)
     <div class="transactionDetail">
         <p>Transaction ID: {{$transaction->id}}</p>
+        <p>Buyer: {{$transaction->user->user_name}}</p>
         <p>Total Price: {{$transaction->total_price}}</p>
         <p>Transaction Date: {{$transaction->transaction_date}}</p>
     </div>

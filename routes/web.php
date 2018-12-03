@@ -57,10 +57,6 @@ Route::get('/testLayout', function(){
     return view('layout');
 });
 
-Route::get('/testFollowCat', function(){
-    return view('followedCategories');
-});
-
 Route::get('/testManageUser', function(){
     return view('manageUser');
 });
