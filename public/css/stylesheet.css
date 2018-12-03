@@ -259,7 +259,7 @@ h2{
     
 }
 
-.comments table, tr, td{
+.comments table, .comments tr, .comments td{
     border: 0px;
 }
 
@@ -273,7 +273,7 @@ h2{
     text-align: left;
 }
 
-.cart table, tr, td{
+.cart table, .cart tr, .cart td{
     border=0px;
     text-align: left;
 }
