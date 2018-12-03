@@ -18,7 +18,7 @@ page/feature | [frontend] | [backend]
 - Post Detail [v][v]
 
 - Cart [v][v]
-- Transaction History [v][]
+- Transaction History [v][v]
 
 - Manage User [v][]
 - Edit User [][]
