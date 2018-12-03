@@ -76,3 +76,7 @@ Route::get('/testManageCat', function(){
 Route::get('/testInsert', function(){
     return view('insertCategory');
 });
+
+Route::get('/testUpdate', function(){
+    return view('updateCategory');
+});
