@@ -13,9 +13,9 @@
                 <th>Category</th>
                 <th>Auth</th>
             </tr>
-            @foreach($categories as $i => $category)
+            @foreach($categories as $category)
             <tr>
-                <td>{{$i+1}}</td>
+                <td>{{$category->id}}</td>
                 <td>{{$category->category_name}}</td>
                 <td>
                     <a href="/updateCategory/{{$category->id}}"><button><input type="image" alt="update" src="/pencilLogo.png" style=10%></button></a>

@@ -57,6 +57,7 @@ class ProfileController extends Controller
     public function showManageUser(){
         if(!Auth::check())return redirect('/');
         if(Auth::user()->user_role != 'Admin')return redirect('/');
-        return view('/manageUser');
+        $users = User::all();
+        return view('/manageUser', compact('users'));
     }
 }

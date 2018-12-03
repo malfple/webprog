@@ -15,13 +15,15 @@
                 <th>Gender</th>
                 <th>Auth</th>
             </tr>
+            @foreach($users as $user)
             <tr>
-                <td>1</td>
-                <td>admin</td>
+                <td>{{$user->id}}</td>
+                <td>{{}}</td>
                 <td>admin@admin</td>
                 <td>Male</td>
                 <td><a href="#">Edit</a></td>
             </tr>
+            @endforeach
         </table>
     </div>
     
