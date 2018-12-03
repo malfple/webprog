@@ -20,7 +20,7 @@
                             <a href="/manageFollowedCategories">Change Followed Categories</a>
                             <a href="/transactionHistory">Transaction History</a>
                             @can('isAdmin')
-                                <a href="#">Manage User</a>
+                                <a href="/manageUser">Manage User</a>
                                 <a href="/manageCategories">Manage Categories</a>
                                 <a href="/allTransactions">View All Transactions</a>
                             @endcan

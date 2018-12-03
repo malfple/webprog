@@ -24,6 +24,9 @@ Route::get('/profile', 'ProfileController@showProfile');
 Route::post('/updateProfile', 'ProfileController@updateProfile');
 Route::post('/cancelUpdateProfile', 'ProfileController@cancelUpdate');
 
+// --- admin section
+Route::get('/manageUser', 'ProfileController@showManageUser');
+
 // display posts, comments, etc + their features
 Route::get('/', 'HomeController@showHome');
 Route::get('/myPosts', 'HomeController@showMyPosts');
@@ -41,6 +44,7 @@ Route::get('/deletePost/{id}', 'HomeController@deletePost');
 Route::get('/manageFollowedCategories', 'CategoryController@showFollowedCategories');
 Route::post('/updateFollowedCategories', 'CategoryController@updateFollowedCategories');
 
+// --- admin section
 Route::get('/manageCategories', 'CategoryController@showManageCategories');
 
 Route::get('/updateCategory/{id}', 'CategoryController@showUpdateCategory');
