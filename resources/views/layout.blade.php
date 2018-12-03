@@ -24,6 +24,7 @@
                                 <a href="#">Manage Category</a>
                                 <a href="#">View Transactions</a>
                             @endcan
+                            <a href="/cart">Cart</a>
                             <a class="username"href="/profile">{{Auth::user()->user_name}}</a>
                             <a href="/logout">Logout</a>
                          @else
