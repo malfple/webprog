@@ -57,8 +57,16 @@ class TransactionController extends Controller
         return redirect('/cart');
     }
 
+    public function checkout(Request $request){
+        return $request;
+        $cart = Auth::user()->cart;
+
+    }
+
     public function showTransactionHistory(){
         if(!Auth::check())return redirect('/');
+        $transactions = Auth::user()->transactions;
+        return $transactions;
         return view('transactionHistory');
     }
 }

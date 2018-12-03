@@ -20,5 +20,8 @@
         @endforeach
     </table>
     <p>Total Price: Rp. </p>
-    <a href=#>Checkout</a>
+    <form action="/checkout" method="POST">
+        {{csrf_field()}}
+        <button type="submit">Checkout</button>
+    </form>
 @endsection
