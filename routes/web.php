@@ -80,3 +80,7 @@ Route::get('/testInsert', function(){
 Route::get('/testUpdate', function(){
     return view('updateCategory');
 });
+
+Route::get('/testEdit', function(){
+    return view('editUser');
+});

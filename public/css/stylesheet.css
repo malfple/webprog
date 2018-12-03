@@ -361,3 +361,44 @@ h2{
     width: 100%;
     text-align: center;
 }
+
+.edituser img{
+    text-align: center;
+    width: auto;
+    height: auto;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.edituser table, .edituser td{
+    border: 0px solid black;
+    text-align: center;
+}
+.edituser input, .edituser select{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    border: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 0.5px solid black;
+    font-size: 14px;
+    width: 60%;
+}
+
+.edituser{
+    text-align: center;
+}
+
+.edituser #delete{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #d82b2b;
+    border: 0;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
