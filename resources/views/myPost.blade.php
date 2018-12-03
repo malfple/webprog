@@ -10,7 +10,7 @@
 <div class="imgrow">
     @foreach($posts as $post)
         <div class="imgcol">
-            <a href="#">
+            <a href="/postDetail/{{$post->id}}">
                 <center>
                     <img src="/storage/{{$post->post_picture}}"><br>
                     {{$post->post_name}}<br>
