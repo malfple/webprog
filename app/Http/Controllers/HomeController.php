@@ -72,7 +72,12 @@ class HomeController extends Controller
 
     public function showFollowedPosts(){
         if(!Auth::check())return redirect('/');
-        $posts = Post::paginate(10);
+        $posts = Post::whereHas('category', function($query){
+            $query->whereHas('users', function($query2){
+                $query2->where('user_id', Auth::user()->id);
+            });
+        })->paginate(10);
+        //return $posts;
         return view('followedPost', compact('posts'));
     }
 
