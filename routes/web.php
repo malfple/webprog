@@ -41,6 +41,16 @@ Route::get('/deletePost/{id}', 'HomeController@deletePost');
 Route::get('/manageFollowedCategories', 'CategoryController@showFollowedCategories');
 Route::post('/updateFollowedCategories', 'CategoryController@updateFollowedCategories');
 
+Route::get('/manageCategories', 'CategoryController@showManageCategories');
+
+Route::get('/updateCategory/{id}', 'CategoryController@showUpdateCategory');
+Route::post('/doUpdateCategory', 'CategoryController@updateCategory');
+
+Route::get('/deleteCategory/{id}', 'CategoryController@deleteCategory');
+
+Route::get('/addCategory', 'CategoryController@showAddCategory');
+Route::post('/doAddCategory', 'CategoryController@addCategory');
+
 // transactions
 Route::get('/cart', 'TransactionController@showCart');
 
@@ -59,18 +69,6 @@ Route::get('/testLayout', function(){
 
 Route::get('/testManageUser', function(){
     return view('manageUser');
-});
-
-Route::get('/testManageCat', function(){
-    return view('manageCategories');
-});
-
-Route::get('/testInsert', function(){
-    return view('insertCategory');
-});
-
-Route::get('/testUpdate', function(){
-    return view('updateCategory');
 });
 
 Route::get('/testEdit', function(){

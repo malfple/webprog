@@ -21,7 +21,7 @@
                             <a href="/transactionHistory">Transaction History</a>
                             @can('isAdmin')
                                 <a href="#">Manage User</a>
-                                <a href="#">Manage Category</a>
+                                <a href="/manageCategories">Manage Categories</a>
                                 <a href="#">View All Transactions</a>
                             @endcan
                             <a href="/cart">Cart</a>
