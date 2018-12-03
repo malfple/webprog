@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/stylesheet.css')}}">
         <title>@yield('title')</title>
     </head>
     <body>

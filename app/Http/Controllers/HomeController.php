@@ -82,6 +82,7 @@ class HomeController extends Controller
     }
 
     public function showPostDetail($id){
-        return $id;
+        //return redirect('/testPostDetail');
+        return view('postDetail');
     }
 }
