@@ -19,7 +19,7 @@
                     <td>1</td>
                     <td>admin</td>
                     <td>
-                        <input type="image" alt="update" src="/updateLogo.png" style=10%>
+                        <input type="image" alt="update" src="/pencilLogo.png" style=10%>
                         <input type="image" alt="delete" src="/deleteLogo.png" style=10%>
                     </td>
                 </tr>
