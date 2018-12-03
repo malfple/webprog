@@ -16,7 +16,8 @@
                     <a href="/">Home</a>
                         @if(Auth::check())
                             <a href="/myPosts">My Post</a>
-                            <a href="#">Followed Categories</a>
+                            <a href="#">Followed Posts</a>
+                            <a href="#">Change Followed Categories</a>
                             <a href="#">Transaction History</a>
                             @can('isAdmin')
                                 <a href="#">Manage User</a>
