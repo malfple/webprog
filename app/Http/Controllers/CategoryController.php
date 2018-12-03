@@ -22,14 +22,14 @@ class CategoryController extends Controller
     }
 
     public function updateFollowedCategories(Request $request){
+        $user = Auth::user();
         $categories = Category::all();
-        $test = array_fill(0, $categories->count(), 0);
+        $user->categories()->detach();
         foreach($categories as $i => $category){
             if($request->input($i) == '1'){
-                $test[$i] = 1;
+                $user->categories()->attach($category->id);
             }
         }
-        // still testing
-        return $test;
+        return redirect('/manageFollowedCategories');
     }
 }
