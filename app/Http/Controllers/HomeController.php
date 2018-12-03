@@ -12,13 +12,13 @@ class HomeController extends Controller
 {
     public function showHome(){
         $posts = Post::paginate(10);
-        return view('home', ['posts' => $posts]);
+        return view('home', compact('posts'));
     }
 
     public function showMyPosts(){
         if(!Auth::check())return redirect('/');
         $posts = Auth::user()->posts()->paginate(5);
-        return view('myPost', ['posts' => $posts]);
+        return view('myPost', compact('posts'));
     }
 
     public function showInsertPost(){
@@ -71,7 +71,9 @@ class HomeController extends Controller
     }
 
     public function showFollowedPosts(){
-        
+        if(!Auth::check())return redirect('/');
+        $posts = Post::paginate(10);
+        return view('followedPost', compact('posts'));
     }
 
     public function showPostDetail($id){

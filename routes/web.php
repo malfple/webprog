@@ -33,6 +33,8 @@ Route::post('/doInsertPost', 'HomeController@insertPost');
 
 Route::get('/postDetail/{id}', 'HomeController@showPostDetail');
 
+Route::get('/followedPosts', 'HomeController@showFollowedPosts');
+
 // Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
 
 // -----  test routes  -----
