@@ -5,20 +5,31 @@
 @section('content')
 
     <div class="categories">
-        <table>
-            <tr>
-                <td>
-                    <h2>Categories</h2>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <form>
-                        <input type="checkbox" value="ahegao"> Ahegao<br>
-                        <input type="checkbox" value="anime"> Anime<br>
-                    </form>
-                </td>
-            </tr>
-        </table>
+        <form>
+            <table width=100%>
+                <tr class="title">
+                    <th colspan="2">
+                        Categories
+                    </th>
+                </tr>
+                <tr class="checkbox1">
+                    <td>
+                        <input type="checkbox" value="ahegao">
+                    </td>
+                    <td class="desc">
+                        Ahegao
+                    </td>
+                </tr>
+                <tr class="checkbox1">
+                    <td>
+                        <input type="checkbox" value="anime"> 
+                    </td>
+                    <td class="desc">
+                        Anime
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="submit">
+        </form>
     </div>
 @endsection
