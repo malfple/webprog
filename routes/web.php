@@ -37,6 +37,10 @@ Route::get('/postDetail/{id}', 'HomeController@showPostDetail');
 Route::post('/doAddComment', 'HomeController@addComment');
 Route::get('/deletePost/{id}', 'HomeController@deletePost');
 
+// category
+Route::get('/manageFollowedCategories', 'CategoryController@showFollowedCategories');
+Route::post('/updateFollowedCategories', 'CategoryController@updateFollowedCategories');
+
 // transactions
 Route::get('/cart', 'TransactionController@showCart');
 
