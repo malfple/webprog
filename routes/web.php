@@ -53,14 +53,6 @@ Route::get('/testLayout', function(){
     return view('layout');
 });
 
-Route::get('/testTransactionHistory', function(){
-    return view('transactionHistory');
-});
-
-Route::get('/testProfilePage', function(){
-    return view('profilePage');
-});
-
 Route::get('/testFollowCat', function(){
     return view('followedCategories');
 });
