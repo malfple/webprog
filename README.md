@@ -21,7 +21,7 @@ page/feature | [frontend] | [backend]
 - Transaction History [v][v]
 
 - Manage User [v][]
-- Edit User [][]
+- Edit User [v][]
 - Manage Categories [v][]
 - Update Category [v][]
 - Insert Category [v][]
