@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Cart;
 use App\Post;
+use App\Transaction;
 
 class TransactionController extends Controller
 {
@@ -17,7 +18,9 @@ class TransactionController extends Controller
             Auth::user()->cart()->save($cart);
         }
         $posts = $cart->posts;
-        return view('cart', compact('posts'));
+        $total_price = 0;
+        foreach($posts as $post)$total_price += $post->post_price;
+        return view('cart', compact('posts', 'total_price'));
     }
 
     public function addToCart($id){
@@ -58,15 +61,27 @@ class TransactionController extends Controller
     }
 
     public function checkout(Request $request){
-        return $request;
         $cart = Auth::user()->cart;
+        $posts = $cart->posts;
+        if($posts->count() < 1)return redirect('/cart');
 
+        $transaction = new Transaction;
+        $transaction->transaction_date = now();
+        $transaction->total_price = 0;
+        Auth::user()->transactions()->save($transaction);
+
+        foreach($posts as $post){
+            $cart->posts()->detach($post->id);
+            $transaction->posts()->attach($post->id);
+            $transaction->total_price += $post->post_price;
+        }
+        $transaction->save();
+        return redirect('/cart');
     }
 
     public function showTransactionHistory(){
         if(!Auth::check())return redirect('/');
         $transactions = Auth::user()->transactions;
-        return $transactions;
-        return view('transactionHistory');
+        return view('transactionHistory', compact('transactions'));
     }
 }
