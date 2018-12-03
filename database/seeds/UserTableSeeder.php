@@ -33,6 +33,13 @@ class UserTableSeeder extends Seeder
         	'user_gender' => 'Male',
         	'user_picture' => '2fn0m5.jpg'
         ]);
-	    
+	    DB::table('users')->insert([
+            'user_name' => 'admin2',
+            'email' => 'admin2@gmail.com',
+            'password' =>'admin',
+            'user_role' => 'Admin',
+            'user_gender' => 'Female',
+            'user_picture' => '2fn0m5.jpg'
+        ]);
 	}
 }
