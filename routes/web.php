@@ -31,6 +31,8 @@ Route::post('/cancelUpdateProfile', function(){
 Route::get('/addPost', 'HomeController@showInsertPost');
 Route::post('/doInsertPost', 'HomeController@insertPost');
 
+Route::get('/postDetail/{id}', 'HomeController@showPostDetail');
+
 // Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
 
 // -----  test routes  -----
@@ -39,10 +41,10 @@ Route::get('/testLayout', function(){
     return view('layout');
 });
 
-Route::get('/transactionHistory', function(){
-    return view('transactionHistory');
+Route::get('/testPostDetail', function(){
+    return view('postDetail');
 });
 
-Route::get('/postDetail', function(){
-    return view('postDetail');
+Route::get('/testTransactionHistory', function(){
+    return view('transactionHistory');
 });

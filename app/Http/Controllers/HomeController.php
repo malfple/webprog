@@ -69,4 +69,8 @@ class HomeController extends Controller
         $error = "post added successfully";
         return view('insertPost', compact('error', 'categories'));
     }
+
+    public function showPostDetail($id){
+        return $id;
+    }
 }

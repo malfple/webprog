@@ -4,9 +4,9 @@
 
 @section('content')
 <div class="imgrow">
-    @foreach($posts as $post)
+    @foreach($posts as $i => $post)
         <div class="imgcol">
-            <a href="#">
+            <a href="/postDetail/{{($posts->currentPage()-1) * 10 + $i+1}}">
                 <center>
                     <img src="/storage/{{$post->post_picture}}"><br>
                     {{$post->post_name}}<br>
