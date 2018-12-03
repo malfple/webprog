@@ -26,6 +26,7 @@ Route::post('/cancelUpdateProfile', 'ProfileController@cancelUpdate');
 
 // --- admin section
 Route::get('/manageUser', 'ProfileController@showManageUser');
+Route::get('/updateUser/{id}', 'ProfileController@showUpdateUser');
 
 // display posts, comments, etc + their features
 Route::get('/', 'HomeController@showHome');

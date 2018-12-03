@@ -60,4 +60,11 @@ class ProfileController extends Controller
         $users = User::all();
         return view('/manageUser', compact('users'));
     }
+
+    public function showUpdateUser($id){
+        if(!Auth::check())return redirect('/');
+        if(Auth::user()->user_role != 'Admin')return redirect('/');
+        $user = User::where('id', $id)->first();
+        return view('editUser', compact('user'));
+    }
 }

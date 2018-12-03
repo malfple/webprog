@@ -18,10 +18,10 @@
             @foreach($users as $user)
             <tr>
                 <td>{{$user->id}}</td>
-                <td>{{}}</td>
-                <td>admin@admin</td>
-                <td>Male</td>
-                <td><a href="#">Edit</a></td>
+                <td>{{$user->user_name}}</td>
+                <td>{{$user->email}}</td>
+                <td>{{$user->user_gender}}</td>
+                <td><a href="/updateUser/{{$user->id}}">Edit</a></td>
             </tr>
             @endforeach
         </table>
