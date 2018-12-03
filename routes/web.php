@@ -74,14 +74,6 @@ Route::get('/allTransactions', 'TransactionController@showAllTransactions');
 
 // -----  test routes  -----
 
-Route::get('/testLayout', function(){
-    return view('layout');
-});
-
-Route::get('/testManageUser', function(){
-    return view('manageUser');
-});
-
-Route::get('/testEdit', function(){
-    return view('editUser');
-});
+// Route::get('/testLayout', function(){
+//     return view('layout');
+// });
