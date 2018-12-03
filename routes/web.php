@@ -38,9 +38,10 @@ Route::post('/doAddComment', 'HomeController@addComment');
 Route::get('/deletePost/{id}', 'HomeController@deletePost');
 
 // transactions
-Route::get('/addToCart/{id}', 'TransactionController@addToCart');
-
 Route::get('/cart', 'TransactionController@showCart');
+
+Route::get('/addToCart/{id}', 'TransactionController@addToCart');
+Route::get('/removeFromCart/{id}', 'TransactionController@removeFromCart');
 
 // Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
 

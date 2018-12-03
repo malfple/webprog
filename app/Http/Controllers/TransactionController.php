@@ -9,6 +9,17 @@ use App\Post;
 
 class TransactionController extends Controller
 {
+    public function showCart(){
+        if(!Auth::check())return redirect('/');
+        $cart = Auth::user()->cart;
+        if(!$cart){
+            $cart = new Cart;
+            Auth::user()->cart()->save($cart);
+        }
+        $posts = $cart->posts;
+        return view('cart', compact('posts'));
+    }
+
     public function addToCart($id){
         if(!Auth::check())return redirect('/');
         $cart = Auth::user()->cart;
@@ -34,14 +45,15 @@ class TransactionController extends Controller
         return view('postDetail', compact('post', 'owner', 'category', 'comments', 'error', 'isOwner'));
     }
 
-    public function showCart(){
+    public function removeFromCart($id){
         if(!Auth::check())return redirect('/');
         $cart = Auth::user()->cart;
         if(!$cart){
             $cart = new Cart;
             Auth::user()->cart()->save($cart);
         }
-        $posts = $cart->posts;
-        return view('cart', compact('posts'));
+
+        $cart->posts()->detach($id);
+        return redirect('/cart');
     }
 }

@@ -5,8 +5,8 @@
 @section('content')
     <p>Items in Cart: </p>
     <table class="cart">
+        @foreach($posts as $post)
         <tr>
-            @foreach($posts as $post)
             <td>
                 <a href="/postDetail/{{$post->id}}"><img src="/storage/{{$post->post_picture}}" alt="Picture" style=30%></a>
             </td>
@@ -14,10 +14,10 @@
                 <p>Image Title: {{$post->post_name}}</p>
                 <p>Image Price: {{$post->post_price}}</p>
                 <p>Image Owner: {{$post->user->user_name}}</p>
-                <a href="#">Remove</a>
+                <a href="/removeFromCart/{{$post->id}}">Remove</a>
             </td>
-            @endforeach
         </tr>
+        @endforeach
     </table>
     <p>Total Price: Rp. </p>
     <a href=#>Checkout</a>
