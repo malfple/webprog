@@ -64,3 +64,7 @@ Route::get('/testDetail', function(){
 Route::get('/testFollowCat', function(){
     return view('followedCategories');
 });
+
+Route::get('/testManageUser', function(){
+    return view('manageUser');
+});

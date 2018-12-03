@@ -283,4 +283,15 @@ h2{
     text-align: left;
 }
 
+.content .manageuser{
+    text-align: center;
+}
 
+.manageuser .usertitle{
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+.manageuser table{
+    border: 1px solid black;
+}
