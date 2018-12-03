@@ -70,3 +70,7 @@ Route::get('/testFollowCat', function(){
 Route::get('/testManageUser', function(){
     return view('manageUser');
 });
+
+Route::get('/testManageCat', function(){
+    return view('manageCategories');
+});

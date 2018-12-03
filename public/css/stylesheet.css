@@ -315,11 +315,29 @@ h2{
     text-align: center;
 }
 
+.content .managecategory{
+    text-align: center;
+}
+
 .manageuser .usertitle{
     font-family: "Roboto", sans-serif;
     font-size: 20px;
 }
 
 .manageuser table{
+    border: 1px solid black;
+}
+
+.managecategory .categorytitle{
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+.managecategory input{
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.managecategory table{
     border: 1px solid black;
 }

@@ -6,7 +6,7 @@
     <div class="manageuser">
         <table width=100%>
             <tr>
-                <p class="usertitle" style=>User</p>
+                <p class="usertitle">User</p>
             </tr>
             <tr>
                 <th>ID</th>
