@@ -83,6 +83,9 @@ class HomeController extends Controller
 
     public function showPostDetail($id){
         //return redirect('/testPostDetail');
-        return view('postDetail');
+        $post = Post::where('id', $id)->first();
+        $owner = $post->user;
+        $category = $post->category;
+        return view('postDetail', compact('post', 'owner', 'category'));
     }
 }

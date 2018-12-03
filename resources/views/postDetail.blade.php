@@ -5,7 +5,7 @@
 @section('content')
     <div class="form2">
         <div class="top">
-        <h2>User</h2>
+        <h2>{{$owner->user_name}}</h2>
             <div class="btns">
                 <ul>
                     <a href="#">Add to Cart</a>
@@ -14,8 +14,11 @@
             </div>
         </div>
         <div class="img">
-            <img src="/ahegao.jpg" alt=Anime style=100%>
-            <p>Ahegao Face</p>
+            <img src="/storage/{{$post->post_picture}}" alt=Anime style=100%>
+            <p>{{$post->post_name}}</p>
+            <p>Category: {{$category->category_name}}</p>
+            <p>Caption: {{$post->post_caption}}</p>
+            <p>Price: {{$post->post_price}}</p>
         </div>
         <div class="comments">
             <table>
