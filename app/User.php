@@ -14,6 +14,9 @@ class User extends AuthUser
     public function categories(){
         return $this->belongsToMany('App\Category');
     }
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
 
     // public function cart(){
     // 	return $this->belongsTo('App\Cart');
