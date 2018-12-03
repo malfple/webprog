@@ -6,15 +6,17 @@
     <p>Items in Cart: </p>
     <table class="cart">
         <tr>
+            @foreach($posts as $post)
             <td>
-                <img src="/ahegao.jpg" alt="Picture" style=30%>
+                <a href="/postDetail/{{$post->id}}"><img src="/storage/{{$post->post_picture}}" alt="Picture" style=30%></a>
             </td>
             <td>
-                <p>Image Title: Ahegao</p>
-                <p>Image Price: 10000</p>
-                <p>Image Owner: Loli Heaven</p>
+                <p>Image Title: {{$post->post_name}}</p>
+                <p>Image Price: {{$post->post_price}}</p>
+                <p>Image Owner: {{$post->user->user_name}}</p>
                 <a href="#">Remove</a>
             </td>
+            @endforeach
         </tr>
     </table>
     <p>Total Price: Rp. </p>

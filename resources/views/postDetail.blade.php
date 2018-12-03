@@ -4,13 +4,14 @@
 
 @section('content')
     <div class="form2">
+        <p style="color: red">{{$error}}</p>
         <div class="top">
         <h2>{{$owner->user_name}}</h2>
             <div class="btns">
                 @if(Auth::check())
                 <ul>
                     @if(!$isOwner)
-                        <a href="#">Add to Cart</a>
+                        <a href="/addToCart/{{$post->id}}">Add to Cart</a>
                     @endif
                     @can('isAdmin')
                         <a href="#">Delete Post</a>
@@ -48,7 +49,6 @@
         @if(Auth::check())
         <div class="inputComment">
             <p>Add Your Comment:</p>
-            <p style="color: red">{{$error}}</p>
             <form id="commentForm" action="/doAddComment" method="POST">
                 {{csrf_field()}}
                 <textarea name="comment" form="commentForm" placeholder="Input your commet here" rows="4" cols="50"></textarea>

@@ -37,6 +37,8 @@ Route::get('/postDetail/{id}', 'HomeController@showPostDetail');
 Route::post('/doAddComment', 'HomeController@addComment');
 
 // transactions
+Route::get('/addToCart/{id}', 'TransactionController@addToCart');
+
 Route::get('/cart', 'TransactionController@showCart');
 
 // Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
