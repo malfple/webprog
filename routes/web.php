@@ -28,18 +28,15 @@ Route::post('/cancelUpdateProfile', function(){
     return redirect('/');
 });
 
-
 Route::get('/addPost', 'HomeController@showInsertPost');
 Route::post('/doInsertPost', 'HomeController@insertPost');
 
 // Route::get('/testLogin/{email}/{password}', 'LoginController@testLogin');
 
+// -----  test routes  -----
+
 Route::get('/testLayout', function(){
     return view('layout');
-});
-
-Route::get('/insertPost', function(){
-    return view('insertPost');
 });
 
 Route::get('/transactionHistory', function(){
