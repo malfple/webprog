@@ -54,3 +54,7 @@ Route::get('/testTransactionHistory', function(){
 Route::get('/testProfilePage', function(){
     return view('profilePage');
 });
+
+Route::get('/testCart', function(){
+    return view('cart');
+});
