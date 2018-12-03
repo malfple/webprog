@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
-    //
-    // public function(){
-    // 	return $this->hasOne('App\Cart');
-    // }
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+    public function posts(){
+        return $this->belongsToMany('App\Post');
+    }
 }

@@ -18,7 +18,6 @@ class Post extends Model
         return $this->hasMany('App\Comment');
     }
 
-    // public function carts(){
-    // 	return $this->belongsTo('App\Cart');
-    // }
+    // Only when needed => carts()
+    // Only when needed => transactions()
 }
