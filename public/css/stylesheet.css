@@ -278,9 +278,37 @@ h2{
     text-align: left;
 }
 
-.categories table, .categories tr, .categories td{
-    border:0px;
+.categories table, .categories tr, .categories td, .categories th{
+    border:0px solid black;
+    
+    font-family: "Roboto", sans-serif;
+}
+
+.categories .title{
+    text-align: center;
+}
+
+.categories .checkbox1{
+    width: 50%;
+}
+
+.categories .checkbox1 input{
+    text-align: right;
+    margin-left: 99%;
+    margin-right: auto;
+}
+
+.categories .desc{
+    width: 50%;
     text-align: left;
+}
+
+.categories input{
+    margin-left: 48%;
+}
+
+.categories h2{
+    text-align: center;
 }
 
 .content .manageuser{
