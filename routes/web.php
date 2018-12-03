@@ -71,18 +71,6 @@ Route::get('/testManageUser', function(){
     return view('manageUser');
 });
 
-Route::get('/testManageCat', function(){
-    return view('manageCategories');
-});
-
-Route::get('/testInsert', function(){
-    return view('insertCategory');
-});
-
-Route::get('/testUpdate', function(){
-    return view('updateCategory');
-});
-
 Route::get('/testEdit', function(){
     return view('editUser');
 });
