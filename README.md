@@ -14,7 +14,7 @@ page/feature | [frontend] | [backend]
 - MyPosts [v][v]
 - Insert Post [v][v]
 - Followed Posts [v][v]
-- Followed category [v][]
+- Followed category [v][v]
 - Post Detail [v][v]
 
 - Cart [v][v]
