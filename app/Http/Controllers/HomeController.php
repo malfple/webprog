@@ -117,4 +117,14 @@ class HomeController extends Controller
         $comment->save();
         return redirect('/postDetail/'.$request->post_id);
     }
+
+    public function deletePost($id){
+        if(!Auth::check())return redirect('/');
+        $post = Post::where('id', $id)->first();
+        if($post->user->user_name != Auth::user()->user_name){
+            if(Auth::user()->user_role != 'Admin')return redirect('/');
+        }
+        $post->delete();
+        return redirect('/');
+    }
 }

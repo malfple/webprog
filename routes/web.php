@@ -35,6 +35,7 @@ Route::get('/followedPosts', 'HomeController@showFollowedPosts');
 
 Route::get('/postDetail/{id}', 'HomeController@showPostDetail');
 Route::post('/doAddComment', 'HomeController@addComment');
+Route::get('/deletePost/{id}', 'HomeController@deletePost');
 
 // transactions
 Route::get('/addToCart/{id}', 'TransactionController@addToCart');

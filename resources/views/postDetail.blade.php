@@ -14,11 +14,11 @@
                         <a href="/addToCart/{{$post->id}}">Add to Cart</a>
                     @endif
                     @can('isAdmin')
-                        <a href="#">Delete Post</a>
+                        <a href="/deletePost/{{$post->id}}">Delete Post</a>
                     @endcan
                     @can('isNotAdmin')
                         @if($isOwner)
-                            <a href="#">Delete Post</a>
+                            <a href="/deletePost/{{$post->id}}">Delete Post</a>
                         @endif
                     @endcan
                 </ul>
