@@ -74,10 +74,29 @@ class ProfileController extends Controller
     }
 
     public function updateUser(Request $request){
-        return $request;
+        $user = User::where('id', $request->id)->first();
+        if(strlen($request->name) < 5){
+            $error = "name must have at least 5 characters";
+            return view('editUser', compact('user', 'error'));
+        }
+        if(!filter_var($request->email, FILTER_VALIDATE_EMAIL)){
+            $error = "invalid email";
+            return view('editUser', compact('user', 'error'));
+        }
+        if(User::where('email', $request->email)->where('email', '!=', $user->email)->first()){
+            $error = "email already exist, pick another one";
+            return view('editUser', compact('user', 'error'));
+        }
+        // there is no option to not choose gender, so no validation
+        $user->user_name = $request->name;
+        $user->email = $request->email;
+        $user->user_gender = $request->gender;
+        $user->save();
+        $error = "update successful";
+        return view('editUser', compact('user', 'error'));
     }
 
     public function deleteUser(Request $request){
-        return $request;
+        return redirect('/manageUser');
     }
 }
