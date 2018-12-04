@@ -8,6 +8,8 @@ use App\User;
 
 class ProfileController extends Controller
 {
+    // GET
+    // show profile page view for current logged in user
     public function showProfile(){
         if(!Auth::check())return redirect('/');
         $user = Auth::user();
@@ -15,6 +17,8 @@ class ProfileController extends Controller
         return view('profilePage', compact('error','user'));
     }
 
+    // POST
+    // validates user data, if accepted -> data is updated
     public function updateProfile(Request $request){
         $user = Auth::user();
         if(strlen($request->name) < 5){
@@ -50,10 +54,15 @@ class ProfileController extends Controller
         return view('profilePage', compact('error','user'));
     }
 
+    // POST
+    // cancels update and redirect to home. what an unimportant function :/
+    // but you know, routes need to be clean, so redirects are put here ;)
     public function cancelUpdate(Request $request){
         return redirect('/');
     }
 
+    // GET
+    // show manage user form
     public function showManageUser(){
         if(!Auth::check())return redirect('/');
         if(Auth::user()->user_role != 'Admin')return redirect('/');
@@ -61,6 +70,8 @@ class ProfileController extends Controller
         return view('/manageUser', compact('users'));
     }
 
+    // GET
+    // show user detail form
     public function showUpdateUser($id){
         if(!Auth::check())return redirect('/');
         if(Auth::user()->user_role != 'Admin')return redirect('/');
@@ -69,10 +80,14 @@ class ProfileController extends Controller
         return view('editUser', compact('user', 'error'));
     }
 
+    // POST
+    // another redirect function
     public function cancelUpdateUser(Request $request){
         return redirect('/manageUser');
     }
 
+    // POST
+    // validates user data, and update if accepted
     public function updateUser(Request $request){
         $user = User::where('id', $request->id)->first();
         if(strlen($request->name) < 5){
@@ -96,6 +111,9 @@ class ProfileController extends Controller
         return view('editUser', compact('user', 'error'));
     }
 
+    // POST
+    // < deactivated >
+    // deletes user
     public function deleteUser(Request $request){
         $user = User::where('id', $request->id)->first();
         // $user->delete();

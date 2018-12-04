@@ -6,10 +6,13 @@
     <body>
         <div class="navbar">
             <div class="navbar-left">
+                <form action="/">
                 <ul>
                     <a class="logo">Pintester</a>
-                    <input class="input" type="text"   placeholder="Search here">
+                    <input class="input" type="text" name="search" placeholder="Search here">
+                    <button type="submit">Search</button>
                 </ul>
+                </form>
             </div>
             <div class="navbar-right">
                 <ul>

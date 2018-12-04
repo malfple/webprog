@@ -8,6 +8,8 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+    // GET
+    // show followed categories view, lets user update their follow preferences
     public function showFollowedCategories(){
         if(!Auth::check())return redirect('/');
         $categories = Category::all();
@@ -21,6 +23,8 @@ class CategoryController extends Controller
         return view('/followedCategories', compact('categories', 'isActive'));
     }
 
+    // POST
+    // update the follow preferences
     public function updateFollowedCategories(Request $request){
         $user = Auth::user();
         $categories = Category::all();
@@ -33,6 +37,8 @@ class CategoryController extends Controller
         return redirect('/manageFollowedCategories');
     }
 
+    // GET
+    // manage category view
     public function showManageCategories(){
         if(!Auth::check())return redirect('/');
         if(Auth::user()->user_role != 'Admin')return redirect('/');
@@ -40,6 +46,8 @@ class CategoryController extends Controller
         return view('manageCategories', compact('categories'));
     }
 
+    // GET
+    // show update category form
     public function showUpdateCategory($id){
         if(!Auth::check())return redirect('/');
         if(Auth::user()->user_role != 'Admin')return redirect('/');
@@ -48,6 +56,8 @@ class CategoryController extends Controller
         return view('updateCategory', compact('category', 'error'));
     }
 
+    // POST
+    // validates category data, updates if accepted
     public function updateCategory(Request $request){
         if(strlen($request->name) < 3 || strlen($request->name > 20)){
             $category = Category::where('id', $request->id)->first();
@@ -61,15 +71,20 @@ class CategoryController extends Controller
         return view('updateCategory', compact('category', 'error'));
     }
 
+    // GET
+    // < deactivated >
+    // deletes category
     public function deleteCategory($id){
         if(!Auth::check())return redirect('/');
         if(Auth::user()->user_role != 'Admin')return redirect('/');
-        $category = Category::where('id', $request->id)->first();
+        $category = Category::where('id', $id)->first();
         //$category->delete();
         // uncomment the above line to enable delete
         return redirect('/manageCategories');
     }
 
+    // GET
+    // show add category form
     public function showAddCategory(){
         if(!Auth::check())return redirect('/');
         if(Auth::user()->user_role != 'Admin')return redirect('/');
@@ -77,6 +92,8 @@ class CategoryController extends Controller
         return view('insertCategory', compact('error'));
     }
 
+    // POST
+    // validates category, if accepted adds category
     public function addCategory(Request $request){
         if(strlen($request->name) < 3 || strlen($request->name) > 20){
             $error = "category name must be between 3 and 20 characters";

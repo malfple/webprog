@@ -10,6 +10,8 @@ use App\Transaction;
 
 class TransactionController extends Controller
 {
+    // GET
+    // show cart view
     public function showCart(){
         if(!Auth::check())return redirect('/');
         $cart = Auth::user()->cart;
@@ -23,6 +25,8 @@ class TransactionController extends Controller
         return view('cart', compact('posts', 'total_price'));
     }
 
+    // GET
+    // adds item by id to cart
     public function addToCart($id){
         if(!Auth::check())return redirect('/');
         $cart = Auth::user()->cart;
@@ -48,6 +52,8 @@ class TransactionController extends Controller
         return view('postDetail', compact('post', 'owner', 'category', 'comments', 'error', 'isOwner'));
     }
 
+    // GET
+    // removes item by id from cart
     public function removeFromCart($id){
         if(!Auth::check())return redirect('/');
         $cart = Auth::user()->cart;
@@ -60,6 +66,8 @@ class TransactionController extends Controller
         return redirect('/cart');
     }
 
+    // POST
+    // checkout cart -> information moved to transaction history
     public function checkout(Request $request){
         $cart = Auth::user()->cart;
         $posts = $cart->posts;
@@ -79,12 +87,16 @@ class TransactionController extends Controller
         return redirect('/cart');
     }
 
+    // GET
+    // shows transaction history view
     public function showTransactionHistory(){
         if(!Auth::check())return redirect('/');
         $transactions = Auth::user()->transactions;
         return view('transactionHistory', compact('transactions'));
     }
 
+    // GET
+    // shows all transaction view
     public function showAllTransactions(){
         if(!Auth::check())return redirect('/');
         if(Auth::user()->user_role != 'Admin')return redirect('/');

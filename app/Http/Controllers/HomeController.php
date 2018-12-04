@@ -11,17 +11,23 @@ use Validator;
 
 class HomeController extends Controller
 {
-    public function showHome(){
-        $posts = Post::paginate(10);
+    // GET
+    // shows home view, with optional search feature
+    public function showHome(Request $request){
+        $posts = Post::where('post_name', 'like', '%'.$request->search.'%')->paginate(10);
         return view('home', compact('posts'));
     }
 
+    // GET
+    // show myPosts view
     public function showMyPosts(){
         if(!Auth::check())return redirect('/');
         $posts = Auth::user()->posts()->paginate(5);
         return view('myPost', compact('posts'));
     }
 
+    // GET
+    // show the add post form
     public function showInsertPost(){
         if(!Auth::check())return redirect('/');
         $categories = Category::all();
@@ -29,6 +35,8 @@ class HomeController extends Controller
         return view('insertPost', compact('error', 'categories'));
     }
 
+    // POST
+    // validates inserted post, if accepted -> insert to database
     public function insertPost(Request $request){
         $categories = Category::all();
         if(strlen($request->title) < 20 || strlen($request->title) > 200){
@@ -71,6 +79,8 @@ class HomeController extends Controller
         return view('insertPost', compact('error', 'categories'));
     }
 
+    // GET
+    // show followed posts view
     public function showFollowedPosts(){    
         if(!Auth::check())return redirect('/');
         $posts = Post::whereHas('category', function($query){
@@ -82,6 +92,8 @@ class HomeController extends Controller
         return view('followedPost', compact('posts'));
     }
 
+    // GET
+    // show post detail view
     public function showPostDetail($id){
         //return redirect('/testPostDetail');
         $post = Post::where('id', $id)->first();
@@ -98,6 +110,8 @@ class HomeController extends Controller
         }
     }
 
+    // POST
+    // validates comment and insert
     public function addComment(Request $request){
         if(strlen($request->comment) < 1){
             $id = $request->post_id;
@@ -118,6 +132,8 @@ class HomeController extends Controller
         return redirect('/postDetail/'.$request->post_id);
     }
 
+    // GET
+    // deletes post
     public function deletePost($id){
         if(!Auth::check())return redirect('/');
         $post = Post::where('id', $id)->first();

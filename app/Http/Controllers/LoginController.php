@@ -9,18 +9,24 @@ use App\User;
 
 class LoginController extends Controller
 {
+    // GET
+    // shows login view
     public function showLogin(){
         if(Auth::check())return redirect('/');
         $error = "";
         return view('loginForm', compact('error'));
     }
 
+    // GET
+    // shows register view
     public function showRegister(){
         if(Auth::check())return redirect('/');
         $error = "";
         return view('registerForm', compact('error'));
     }
 
+    // POST
+    // logs in user
     public function doLogin(Request $request){
         $user = User::where('email', $request->email)->where('password', $request->password)->first();
         //return $user;
@@ -33,6 +39,8 @@ class LoginController extends Controller
         return view('loginForm', compact('error'));
     }
 
+    // POST
+    // registers user
     public function doRegister(Request $request){
         if(strlen($request->name) < 5){
             $error = "name must have at least 5 characters";
@@ -86,6 +94,8 @@ class LoginController extends Controller
         return view('loginForm', compact('error'));
     }
 
+    // GET
+    // logs out current user
     public function doLogout(){
         Auth::logout();
         return redirect('/');
